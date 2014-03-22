@@ -9,7 +9,8 @@
   "author": "Xuedi",
   "license": "BSD-2-Clause",
   "dependencies": {
-    "express": "~3.4.8"
+    "express": "~3.4.8",
+    "logfmt": "~1.0.0-pre"
   },
   "devDependencies": {},
   "repository": {
