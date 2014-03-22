@@ -13,6 +13,15 @@ var nodeAuthor;
 var nodeText;
 
 
+app.use(logfmt.requestLogger());
+
+//adds CORS support to server
+app.all('*', function(req, res, next) {
+  res.header("Access-Control-Allow-Origin", "*");
+  res.header("Access-Control-Allow-Headers", "X-Requested-With");
+  next();
+ });
+
 app.configure( function() { 
 
   app.use('/js', express.static(__dirname + '/js')); 
