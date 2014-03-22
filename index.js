@@ -61,8 +61,10 @@ app.post('/cat/:cat', function (request, response) {
 });
 
 
-// start listening on port 8080:
-app.listen(8080);
+var port = Number(process.env.PORT || 5000);
+app.listen(port, function() {
+  console.log("Listening on " + port);
+});
 
 function xmlWhatever() {
 	//Last Node of XML / root
