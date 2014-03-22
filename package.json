@@ -1,22 +1,25 @@
 {
   "name": "droppingServer",
-  "version": "1.0.0",
-  "description": "submit drops here",
+  "version": "0.0.0",
+  "description": "droppings of wisdom",
   "main": "index.js",
+  "dependencies": {
+    "express": "~3.4.8",
+    "logfmt": "~1.0.0"
+  },
+  "devDependencies": {},
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "Xuedi",
-  "license": "BSD-2-Clause",
-  "dependencies": {
-    "express": "~3.4.8",
-    "logfmt": "~1.0.0-pre"
-  },
-  "devDependencies": {},
   "repository": {
     "type": "git",
-    "url": "https://github.com/dooztron/droppingServer.git"
+    "url": "https://github.com/dooztron/droppingServer"
   },
+  "keywords": [
+    "dropping"
+  ],
+  "author": "Xuedi",
+  "license": "BSD-2-Clause",
   "bugs": {
     "url": "https://github.com/dooztron/droppingServer/issues"
   }
