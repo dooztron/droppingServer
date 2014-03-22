@@ -1,0 +1,11 @@
+{
+  "name": "droppingServer",
+  "version": "1.0.0",
+  "description": "submit drops here",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Xuedi",
+  "license": "BSD-2-Clause"
+}
