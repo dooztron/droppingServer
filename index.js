@@ -5,6 +5,7 @@ var express = require('express'),
 	dropCat,
 	fs = require('fs'),
 	pathFile = "./superpoops.xml";
+var logfmt = require("logfmt");
 
 
 var attCategory;
