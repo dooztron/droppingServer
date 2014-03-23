@@ -26,7 +26,7 @@ app.all('*', function(req, res, next) {
 app.configure( function() { 
 
   app.use('/js', express.static(__dirname + '/js')); 
-  console.log("Express configured. Listening on port 8080");
+  console.log("Express configured. Listening on port 5000");
 });
 
 
