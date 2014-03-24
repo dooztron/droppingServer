@@ -42,7 +42,7 @@ app.get('/index*', function (request, response) {
 });
 
 app.get('/data', function (request, response) {
-	response.sendfile('droppings.html');
+	response.sendfile('superpoops.xml');
 });
  
 // if the request is for /name/Joe, or /name/Jane, then express.js
@@ -92,7 +92,13 @@ function xmlWhatever() {
 	  var result = data.replace(lastNode, addNodes);
 	
 	  fs.writeFile(pathFile, result, 'utf8', function (err) {
-	     if (err) return console.log(err);
+	     if (err) {
+	     return console.log(err);
+	     response.send(err); //prints error in front end console
+    	} else {
+      		console.log("JSON saved to " + outputFilename);
+      		response.send(data); //prints data in front end console
+      	}
 	  });
 	});
 }
