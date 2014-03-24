@@ -6,9 +6,12 @@
 	<script type="text/javascript">
 		//this function makes an HTTP GET request for /name/username		
 		function submitName(myName, myDrops, myCat) {
-			$.post("/author/" + myName);
-			$.post("/drops/" + myDrops);
-			$.post("/cat/" + myCat);		
+			
+			$.post("/logdata/cat/" + myCat + "/author/" + myName + "/drops/" + myDrops);
+
+			var x = document.getElementById("myForm");
+			x.remove(x.selectedIndex);
+			document.write("Thanks! " + myName);	
 		}
 
 		
@@ -17,19 +20,19 @@
 	</head>
 	<body>
 	
-	<div id="time"></div>
+	<div id="myForm"></div>
 
 	Category: 
 	<select id="category">
 	  <option value="itp">ITP</option>
-	  <option value="life">Life</option>
+	  <option value="life"selected="selected">Life</option>
 	  <option value="people">People</option>
 	  <option value="sex">Sex</option>
 	  <option value="tech">Tech</option>
 	  <option value="things">Things</option>
 	  <option value="work">Work</option>
 	</select><br>
-	
+
 	What's your name: 
 	<input type="text" id="author" size=50><br>
 

@@ -4,6 +4,7 @@ var express = require('express'),
 	dropPing,
 	dropCat,
 	fs = require('fs'),
+	url = require('url'),
 	pathFile = "./superpoops.xml";
 var logfmt = require("logfmt");
 
@@ -16,6 +17,7 @@ var nodeText;
 
 app.use(logfmt.requestLogger());
 
+
 //adds CORS support to server
 app.all('*', function(req, res, next) {
   res.header("Access-Control-Allow-Origin", "*");
@@ -26,7 +28,7 @@ app.all('*', function(req, res, next) {
 app.configure( function() { 
 
   app.use('/js', express.static(__dirname + '/js')); 
-  console.log("Express configured. Listening on port 5000");
+  console.log("Express configured. Listening on port 8080");
 });
 
 
@@ -41,33 +43,25 @@ app.get('/index*', function (request, response) {
    response.sendfile('index.html');
 });
 
-app.get('/data', function (request, response) {
-	response.sendfile('superpoops.xml');
-});
- 
-// if the request is for /name/Joe, or /name/Jane, then express.js
-// will treat the second element of the address string as the name:
-app.post('/author/:author', function (request, response) {
-	authorName  = request.params.author;
-	console.log(authorName);
-	nodeAuthor = authorName;
-	response.end();
+app.get('/thanks', function (request, response) {
+	response.sendfile('thanks.html');
 });
 
-app.post('/drops/:drops', function (request, response) {
-	dropPing = request.params.drops;
-	console.log(dropPing);
-	nodeText = dropPing;
-	response.end();
-});
-
-app.post('/cat/:cat', function (request, response) {
+app.post('/logdata/cat/:cat/author/:author/drops/:drops', function (request, response) {
 	dropCat = request.params.cat;
+	authorName  = request.params.author;
+	dropPing = request.params.drops;
+
 		console.log(dropCat);
+		console.log(authorName);
+		console.log(dropPing);
+
 		attCategory = dropCat;
+		nodeAuthor = authorName;
+		nodeText = dropPing;
 
 		xmlWhatever();
-		response.end();
+    	response.end();
 });
 
 
@@ -94,10 +88,8 @@ function xmlWhatever() {
 	  fs.writeFile(pathFile, result, 'utf8', function (err) {
 	     if (err) {
 	     return console.log(err);
-	     response.send(err); //prints error in front end console
     	} else {
-      		console.log("JSON saved to " + pathFile);
-      		response.send(result); //prints data in front end console
+      		console.log("XML saved to " + pathFile);
       	}
 	  });
 	});
