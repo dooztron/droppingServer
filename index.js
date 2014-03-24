@@ -96,8 +96,8 @@ function xmlWhatever() {
 	     return console.log(err);
 	     response.send(err); //prints error in front end console
     	} else {
-      		console.log("JSON saved to " + outputFilename);
-      		response.send(data); //prints data in front end console
+      		console.log("JSON saved to " + pathFile);
+      		response.send(result); //prints data in front end console
       	}
 	  });
 	});
