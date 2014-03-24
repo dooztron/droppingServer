@@ -5,7 +5,7 @@ var express = require('express'),
 	dropCat,
 	fs = require('fs'),
 	url = require('url'),
-	pathFile = "./superpoops.xml";
+	pathFile = "./game.xml";
 var logfmt = require("logfmt");
 
 
@@ -13,6 +13,7 @@ var attCategory;
 var attRoulette = "1";
 var nodeAuthor;
 var nodeText;
+var recordedResponse;
 
 
 app.use(logfmt.requestLogger());
@@ -65,6 +66,7 @@ app.post('/logdata/cat/:cat/author/:author/drops/:drops', function (request, res
 		nodeText = dropPing;
 
 		xmlWhatever();
+		response.send(recordedResponse);
     	response.end();
 });
 
@@ -88,6 +90,7 @@ function xmlWhatever() {
 	    return console.log(err);
 	  }
 	  var result = data.replace(lastNode, addNodes);
+	  recordedResponse = result;
 	
 	  fs.writeFile(pathFile, result, 'utf8', function (err) {
 	     if (err) {
