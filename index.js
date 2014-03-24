@@ -47,6 +47,10 @@ app.get('/thanks', function (request, response) {
 	response.sendfile('thanks.html');
 });
 
+app.get('/data', function (request, response) {
+	response.sendfile('superpoops.xml');
+});
+
 app.post('/logdata/cat/:cat/author/:author/drops/:drops', function (request, response) {
 	dropCat = request.params.cat;
 	authorName  = request.params.author;
