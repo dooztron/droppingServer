@@ -46,10 +46,11 @@ app.get('/index*', function (request, response) {
 
 app.get('/thanks', function (request, response) {
 	response.sendfile('thanks.html');
+	response.send(recordedResponse);
 });
 
 app.get('/data', function (request, response) {
-	response.sendfile('superpoops.xml');
+	response.sendfile('game.xml');
 });
 
 app.post('/logdata/cat/:cat/author/:author/drops/:drops', function (request, response) {
@@ -66,7 +67,6 @@ app.post('/logdata/cat/:cat/author/:author/drops/:drops', function (request, res
 		nodeText = dropPing;
 
 		xmlWhatever();
-		response.send(recordedResponse);
     	response.end();
 });
 
