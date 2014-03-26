@@ -32,10 +32,6 @@ app.configure( function() {
   console.log("Express configured. Listening on port 8080");
 });
 
-app.use('/css', express.static(__dirname + '/css')); 
-  console.log("Express configured. Listening on port 8080");
-});
-
 
 
 // respond to web GET requests with the index.html page.
