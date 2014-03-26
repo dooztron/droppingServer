@@ -49,7 +49,7 @@ app.get('/thanks', function (request, response) {
 	response.send(recordedResponse);
 });
 
-app.get('/data', function (request, response) {
+app.get('/data*', function (request, response) {
 	response.sendfile('game.xml');
 });
 

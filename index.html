@@ -1,17 +1,19 @@
 <!DOCTYPE html>
 <html>
 	<head>
+		<title>Drop-pings</title>
+		<link href="pink.css" rel="stylesheet" type="text/css">
 	 <script type="text/javascript" src="js/zepto.min.js"></script>
 
 	<script type="text/javascript">
-		//this function makes an HTTP GET request for /name/username		
+		//this function uses an HTTP POST method in AJAX	
 		function submitName(myName, myDrops, myCat) {
-			
+
 			$.post("/logdata/cat/" + myCat + "/author/" + myName + "/drops/" + myDrops);
 
 			var x = document.getElementById("myForm");
 			x.remove(x.selectedIndex);
-			document.write("Thanks! " + myName);	
+			document.write("Thanks! " + myName);
 		}
 
 		
@@ -19,27 +21,33 @@
 	
 	</head>
 	<body>
+
+		<h1>
+      	// Drop-pings v2.0
+    	</h1>
 	
-	<div id="myForm"></div>
-
-	Category: 
-	<select id="category">
-	  <option value="itp">ITP</option>
-	  <option value="life"selected="selected">Life</option>
-	  <option value="people">People</option>
-	  <option value="sex">Sex</option>
-	  <option value="tech">Tech</option>
-	  <option value="things">Things</option>
-	  <option value="work">Work</option>
-	</select><br>
-
-	What's your name: 
-	<input type="text" id="author" size=50><br>
-
-	Enter your droppings here:
-	<input type="text" id="dropping" size=50><br>
-
-
-	<button id="submitName" onclick="submitName(author.value, dropping.value, category.value);">Submit</button>
-	</body>
+		<div id="myForm">
+	
+			<label> Category: </label>
+			<select id="category" width=50>
+			  <option value="itp">ITP</option>
+			  <option value="life"selected="selected">Life</option>
+			  <option value="people">People</option>
+			  <option value="sex">Sex</option>
+			  <option value="tech">Tech</option>
+			  <option value="things">Things</option>
+			  <option value="work">Work</option>
+			</select><br>
+			
+			<label>What's your name: </label>
+			<input type="text" id="author" size=50><br>
+		
+			<label>Enter your droppings here!</lable>
+			<textarea rows="1" cols="40" id="dropping"></textarea>
+			<!-- <input textarea type="text" id="dropping" ><br> -->
+		
+			<button id="submitName" onclick="submitName(author.value, dropping.value, category.value);">Submit</		button>
+			</div>
+	
+		</body>
 </html>
