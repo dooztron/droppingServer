@@ -24,10 +24,9 @@ h1>span {
     color: #C4C2C2;
 }
 h2 {
-    font: 18px "Trebuchet MS", Arial, Helvetica, sans-serif;
-    padding: 0px 0px 10px 40px;
+    font: 12px "Trebuchet MS", Arial, Helvetica, sans-serif;
+    padding: 0px 0px 0px 40px;
     display: block;
-    border-bottom: 1px solid #F5F5F5;
     margin: -10px -30px 10px -30px;
     color: #969696;
 }
@@ -48,11 +47,11 @@ label>span {
 }
 input[type="text"], textarea, select{
     color: #555;
-    width: 85%;
+    width: 100%;
     display: block;
-    padding: 3px 3px 3px 8px;
+    padding: 3px 3px 3px 3px;
     margin-top: 2px;
-    margin-right: 6px;
+    /*margin-right: 10px;*/
     margin-bottom: 16px;
     border: 1px solid #e5e5e5;
     background: #fbfbfb;
@@ -100,12 +99,10 @@ button:active {
     top:1px;
 }
 select {
-    background: url('down-arrow.png') no-repeat right, -moz-linear-gradient(top, #FBFBFB 0%, #E9E9E9 100%);
-    background: url('down-arrow.png') no-repeat right, -webkit-gradient(linear, left top, left bottom, color-stop(0%,#FBFBFB), color-stop(100%,#E9E9E9));
    appearance:none;
     -webkit-appearance:none; 
    -moz-appearance: none;
-    text-indent: 0.01px;
+    text-indent: 5px;
     text-overflow: '';
-    width: 85%;
+    width: 100%;
 }

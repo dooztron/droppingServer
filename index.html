@@ -28,7 +28,7 @@
 	
 		<div id="myForm">
 	
-			<label> Category: </label>
+			<label> Category:* </label>
 			<select id="category" width=50>
 			  <option value="itp">ITP</option>
 			  <option value="life"selected="selected">Life</option>
@@ -39,14 +39,16 @@
 			  <option value="work">Work</option>
 			</select><br>
 			
-			<label>What's your name: </label>
-			<input type="text" id="author" size=50><br>
+			<label>What's your name:* </label>
+			<input type="text" id="author" size=50 value="Sparkle Unicorn"><br>
 		
-			<label>Enter your droppings here!</lable>
+			<label>Enter your droppings here!*</lable>
 			<textarea rows="1" cols="40" id="dropping"></textarea>
 		
-			<button id="submitName" onclick="submitName(author.value, dropping.value, category.value);">Submit</		button>
-			</div>
+			<button id="submitName" onclick="submitName(author.value, dropping.value, category.value);">Submit</button></br></br></br>
+
+			<h2>* Required Fields</h2>
+		</div>
 	
 		</body>
 </html>
