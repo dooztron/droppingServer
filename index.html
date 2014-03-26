@@ -8,12 +8,24 @@
 	<script type="text/javascript">
 		//this function uses an HTTP POST method in AJAX	
 		function submitName(myName, myDrops, myCat) {
+			if(!myName.match(/\S/)){
+				myName = "anonymous";
+			}
 
 			$.post("/logdata/cat/" + myCat + "/author/" + myName + "/drops/" + myDrops);
 
 			var x = document.getElementById("myForm");
 			x.remove(x.selectedIndex);
-			document.write("Thanks! " + myName);
+
+			var master=document.getElementById("master");
+			var div = document.createElement("div");
+			var label = document.createElement("label");
+			var t=document.createTextNode("Thanks " + myName);
+			div.appendChild(label);
+			label.appendChild(t);
+			master.appendChild(div);
+
+			//document.write("Thanks! " + myName);
 		}
 
 		
@@ -21,7 +33,7 @@
 	</head>
 
 	<body>
-
+		<div id="master">
 		<h1>
       	// Drop-pings v2.0
     	</h1>
@@ -42,13 +54,14 @@
 			<label>What's your name:* </label>
 			<input type="text" id="author" size=50 value="Sparkle Unicorn"><br>
 		
+
 			<label>Enter your droppings here!*</lable>
-			<textarea rows="1" cols="40" id="dropping"></textarea>
+			<textarea id="dropping" maxlength="140"></textarea>
 		
 			<button id="submitName" onclick="submitName(author.value, dropping.value, category.value);">Submit</button></br></br></br>
 
 			<h2>* Required Fields</h2>
 		</div>
-	
+
 		</body>
 </html>
