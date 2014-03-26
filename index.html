@@ -13,7 +13,16 @@
 
 			var x = document.getElementById("myForm");
 			x.remove(x.selectedIndex);
-			document.write("Thanks! " + myName);
+
+			var master=document.getElementById("master");
+			var div = document.createElement("div");
+			var label = document.createElement("label");
+			var t=document.createTextNode("Thanks" + myName);
+			div.appendChild(label);
+			label.appendChild(t);
+			master.appendChild(div);
+
+			//document.write("Thanks! " + myName);
 		}
 
 		
@@ -21,7 +30,7 @@
 	</head>
 
 	<body>
-
+		<div id="master">
 		<h1>
       	// Drop-pings v2.0
     	</h1>
@@ -47,6 +56,6 @@
 		
 			<button id="submitName" onclick="submitName(author.value, dropping.value, category.value);">Submit</		button>
 			</div>
-	
+		</div>
 		</body>
 </html>
