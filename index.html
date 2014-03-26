@@ -8,6 +8,9 @@
 	<script type="text/javascript">
 		//this function uses an HTTP POST method in AJAX	
 		function submitName(myName, myDrops, myCat) {
+			if(myName == undefined){
+				myName = "anonymous";
+			}
 
 			$.post("/logdata/cat/" + myCat + "/author/" + myName + "/drops/" + myDrops);
 
