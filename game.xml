@@ -35,6 +35,11 @@
 	<text>"You know, schizophrenics can tickle themselves."</text>
 </quote>
 
+<quote category="life" roulette="0">
+	<author>ZhenZhen</author>
+	<text>"Maybe being aware isn't a job that can be outsourced."</text>
+</quote>
+
 <quote category="life" roulette="1">
 	<author>Xuedi</author>
 	<text>"Idk, what Im doing!"</text>
@@ -75,6 +80,11 @@
 <quote category="people" roulette="0">
 	<author>DanO</author>
 	<text>"The thing about your pregnant wife is that your wife isn't important, it's that she's pregnant."</text>
+</quote>
+
+<quote category="people" roulette="0">
+	<author>DanO</author>
+	<text>"You're kinda incapacitated. Someone could kill you pretty easily while you're laughing."</text>
 </quote>
 
 <quote category="people" roulette="0">
@@ -141,6 +151,16 @@
 <quote category="tech" roulette="0">
 	<author>DanO</author>
 	<text>"Mobile programming, like wireless, is full of misery."</text>
+</quote>
+
+<quote category="tech" roulette="0">
+	<author>DanO</author>
+	<text>"That's the right hole, wrong plug."</text>
+</quote>
+
+<quote category="tech" roulette="0">
+	<author>DanO</author>
+	<text>"Caches, it's kinda circular like eating your own shit."</text>
 </quote>
 
 <quote category="tech" roulette="0">
